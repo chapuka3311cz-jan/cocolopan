@@ -1464,4 +1464,14 @@ textarea.form-control {
   border: none !important;
 }
 
+/* Aboutページ見出しのグレー楕円を完全に消す */
+.about-main .section-title::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
 
