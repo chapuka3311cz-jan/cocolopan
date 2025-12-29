@@ -752,9 +752,12 @@ main {
   font-size: 1.3rem;
   letter-spacing: 0.08em;
   color: #0b4a4a;
-  font-weight: 400; /* 又は 400・700 好みでOK */
-  line-height: 1.3;
-  margin-bottom: 0px;       /* 文の下余白を減らす */
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  /* ここで余計な影・背景を完全OFFにする */
+  background: none !important;
+  box-shadow: none !important;
 }
 
 /* 画像側 */
@@ -1452,3 +1455,4 @@ textarea.form-control {
     align-self: center;
   }
 }
+
