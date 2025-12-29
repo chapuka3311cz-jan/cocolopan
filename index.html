@@ -15,7 +15,7 @@
   <body class="home">
     <header class="site-header">
       <div class="header-inner">
-        <!-- 左ナビ -->
+        <!-- 左ナビ（PC用） -->
         <nav class="global-nav global-nav-left">
           <ul>
             <li>
@@ -39,14 +39,38 @@
           </a>
         </div>
 
-        <!-- 右ナビ -->
+        <!-- 右ナビ（PC用） -->
         <nav class="global-nav global-nav-right">
           <ul>
             <li><a href="products.html" class="nav-link">商品紹介</a></li>
             <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
           </ul>
         </nav>
+
+        <!-- ハンバーガーメニュー（スマホ用） -->
+        <button
+          class="hamburger"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+
+      <!-- スマホ用ナビ -->
+      <nav class="mobile-nav">
+        <ul>
+          <li>
+            <a href="index.html" class="nav-link nav-home is-current">HOME</a>
+          </li>
+          <li><a href="about.html" class="nav-link">COCOLOとは</a></li>
+          <li><a href="products.html" class="nav-link">商品紹介</a></li>
+          <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="wrapper">
@@ -59,15 +83,15 @@
 
       <!-- キャンペーン -->
       <section class="campaign">
-        <h1 class="campaign-headline">新規オープンキャンペーン中!</h1>
+        <h1 class="campaign-headline">新規オープンキャンペーン中！</h1>
 
-
-        <!-- キャンペーン画像だけにする -->
-<div class="campaign-image">
-  <img src="images/campan.png"
-       alt="モーニングタイム・ランチタイムのキャンペーン">
-</div>
-
+        <!-- キャンペーン画像 -->
+        <div class="campaign-image">
+          <img
+            src="images/campan.png"
+            alt="モーニングタイム・ランチタイムのキャンペーン"
+          />
+        </div>
 
         <div class="weekly-breads">
           <h3>上記の対象の商品は毎日変わります！</h3>
@@ -127,7 +151,7 @@
           <h2 class="access-title">交通アクセス</h2>
 
           <div class="access-row">
-            <!-- 左：店舗情報 + ボタン -->
+            <!-- 左：店舗情報 -->
             <div class="access-left">
               <h2>ベーカリー＆カフェ COCOLO</h2>
               <p>〒194-0021 東京都町田市中町1-19-6</p>
@@ -136,8 +160,6 @@
               <p>定休日：日曜日</p>
               <p>駐車場なし（近くにコインパーキングあり）</p>
               <p>簡易のイートインスペースあり</p>
-
-              
             </div>
 
             <!-- 右：マップ -->
@@ -145,15 +167,13 @@
               <iframe
                 src="https://www.google.com/maps/d/embed?mid=1qfVvdPxvtPWnPdnUsBWUznjaDNz_lN8&ehbc=2E312F"
                 loading="lazy"
-              >
-              </iframe>
+              ></iframe>
               <a
                 href="https://www.google.com/maps/d/embed?mid=1qfVvdPxvtPWnPdnUsBWUznjaDNz_lN8&ehbc=2E312F"
                 target="_blank"
                 class="map-btn"
+                >Google Mapを見る</a
               >
-                Google Mapを見る
-              </a>
             </div>
           </div>
         </div>
@@ -165,7 +185,9 @@
       <div class="footer-inner">
         <!-- 左：店舗情報 -->
         <div class="footer-col footer-col--info">
-          <p class="footer-logo-text">ベーカリー＆カフェ ココロ<br />COCOLO</p>
+          <p class="footer-logo-text">
+            ベーカリー＆カフェ ココロ<br />COCOLO
+          </p>
           <p>〒194-0021<br />東京都町田市中町1-19-6</p>
           <p>電話：03-0000-1234</p>
         </div>
@@ -184,20 +206,38 @@
         <!-- 右：SNS & ロゴ -->
         <div class="footer-col footer-col--sns">
           <div class="footer-sns-icon">
-            <a href="https://www.instagram.com/" target="_blank"
-     rel="noopener noreferrer" aria-label="Instagramを見る">
-    <img src="images/info02.jpg" alt="COCOLO公式Instagram">
-  </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagramを見る"
+            >
+              <img src="images/info02.jpg" alt="COCOLO公式Instagram" />
+            </a>
           </div>
           <div class="footer-logo-mark">
             <a href="index.html" aria-label="トップページへ戻る">
-            <img src="images/logo02.png" alt="COCOLOロゴ">
-           </a>
+              <img src="images/logo02.png" alt="COCOLOロゴ" />
+            </a>
           </div>
         </div>
       </div>
 
       <p class="copyright">© Bakery &amp; Cafe COCOLO.</p>
     </footer>
+
+    <!-- ハンバーガーメニュー制御用スクリプト -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.querySelector(".hamburger");
+        const nav = document.querySelector(".mobile-nav");
+        if (!btn || !nav) return;
+
+        btn.addEventListener("click", function () {
+          const isOpen = nav.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      });
+    </script>
   </body>
 </html>
