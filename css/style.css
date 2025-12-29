@@ -1456,3 +1456,16 @@ textarea.form-control {
   }
 }
 
+/* --------------------------------------
+   Aboutページに残っている影（楕円）を完全に消す
+--------------------------------------*/
+
+/* 疑似要素の影を強制的に無効化 */
+.about-text p::before,
+.about-text p::after {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
