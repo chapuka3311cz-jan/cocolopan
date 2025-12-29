@@ -1450,4 +1450,18 @@ textarea.form-control {
   filter: none !important;
 }
 
+/* --------------------------------------
+   Aboutページの変なグレー帯・影を完全に消す
+---------------------------------------*/
+.about-main::before,
+.about-main::after,
+.about-main *::before,
+.about-main *::after {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  border: none !important;
+}
+
 
