@@ -1242,12 +1242,12 @@ textarea.form-control {
 
 /* ==============================
    ハンバーガーメニュー & モバイル共通
-   （style.css の一番下に追加）
+   （ここからファイル末尾までコピペ）
 ==============================*/
 
-/* ボタン本体 */
+/* ボタン本体（PCでは非表示） */
 .hamburger {
-  display: none;              /* PCでは非表示 */
+  display: none;
   width: 40px;
   height: 32px;
   padding: 0;
@@ -1270,7 +1270,7 @@ textarea.form-control {
   margin: 2px 0;
 }
 
-/* モバイルナビ（デフォルトは非表示） */
+/* モバイルナビ：デフォルトは非表示（PCでも非表示） */
 .mobile-nav {
   display: none;
   background-color: #fff8d6;
@@ -1294,7 +1294,7 @@ textarea.form-control {
   text-decoration: none;
 }
 
-/* 開いたとき */
+/* 開いているときだけ表示 */
 .mobile-nav.is-open {
   display: block;
 }
@@ -1303,6 +1303,7 @@ textarea.form-control {
    スマホ用レイアウト調整
 ------------------------------*/
 @media (max-width: 768px) {
+
   /* ベースフォント少し小さめに */
   html {
     font-size: 70%;
@@ -1326,7 +1327,7 @@ textarea.form-control {
     padding: 8px 16px 10px;
   }
 
-  /* PCナビは隠す */
+  /* PC用ナビは非表示 */
   .global-nav-left,
   .global-nav-right {
     display: none;
@@ -1337,12 +1338,8 @@ textarea.form-control {
     display: inline-flex;
   }
 
-  /* キービジュアルのコピーを少し小さく＆上げる */
+  /* キービジュアルのコピーを少し小さく＆位置調整 */
   .keyvisual {
-    height: 380px;
-  }
-
-  .home .keyvisual {
     height: 420px;
   }
 
@@ -1354,6 +1351,16 @@ textarea.form-control {
     padding: 8px 16px;
     font-size: 1.8rem;
     letter-spacing: 0.2em;
+  }
+
+  /* ★ ヒーローのタイトル（お問い合わせ／商品紹介／COCOLOとは）
+     スマホで2段にならないように調整 */
+  .contact-hero-title,
+  .products-hero-title,
+  .about-hero-title {
+    font-size: 2.2rem;
+    padding: 12px 24px;
+    white-space: nowrap;   /* 折り返さない */
   }
 
   /* キャンペーン見出し・画像 */
@@ -1405,7 +1412,7 @@ textarea.form-control {
     padding: 0 16px;
   }
 
-  /* About・Products・Contact ページの左右余白 */
+  /* About・Products・Contact ページの余白 */
   .page-about,
   .page-products,
   .page-contact {
@@ -1422,7 +1429,7 @@ textarea.form-control {
     padding: 20px 16px 40px;
   }
 
-  /* フッター：縦積み＋真ん中寄せ */
+  /* フッター：縦積み＋中央寄せ */
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -1445,4 +1452,3 @@ textarea.form-control {
     align-self: center;
   }
 }
-
