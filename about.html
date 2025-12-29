@@ -13,7 +13,7 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- 左ナビ -->
+    <!-- 左ナビ（PC用） -->
     <nav class="global-nav global-nav-left">
       <ul>
         <li><a href="index.html" class="nav-link nav-home">HOME</a></li>
@@ -35,7 +35,7 @@
       </a>
     </div>
 
-    <!-- 右ナビ -->
+    <!-- 右ナビ（PC用） -->
     <nav class="global-nav global-nav-right">
       <ul>
         <li><a href="products.html" class="nav-link">商品紹介</a></li>
@@ -43,7 +43,23 @@
       </ul>
     </nav>
 
+    <!-- ハンバーガー（スマホ用） -->
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
+  <!-- スマホ用ナビ -->
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="index.html" class="nav-link nav-home">HOME</a></li>
+      <li><a href="about.html" class="nav-link is-current">COCOLOとは</a></li>
+      <li><a href="products.html" class="nav-link">商品紹介</a></li>
+      <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
@@ -56,8 +72,11 @@
 
     <section class="about-main">
       <h2 class="section-title">焼きたてのパンで幸せな一日を</h2>
-             <p class="about-sub">COCOLOは、イタリア語の “coccolare（コッコラーレ）＝”寄り添う” という言葉と、
-              <br>日本語の「こころ」を重ねて名づけられた小さなベーカリーカフェです.</p>
+      <p class="about-sub">
+        COCOLOは、イタリア語の “coccolare（コッコラーレ）＝”寄り添う” という言葉と、<br>
+        日本語の「こころ」を重ねて名づけられた小さなベーカリーカフェです。
+      </p>
+
       <div class="about-section">
         <div class="about-text">
           <h3 class="about-heading">素材へのこだわり</h3>
@@ -91,8 +110,7 @@
           <h3 class="about-heading">誰もが気軽に立ち寄れる店</h3>
           <p>
             当店は簡易な店内イートインスペースを設けており、ゆったりと過ごせます。<br>
-            またベビーカー・車椅子のお客様も安心してご利用いただけるよう、
-            入り口や通路幅に工夫をしています。<br>
+            またベビーカー・車椅子のお客様も安心してご利用いただけるよう、入り口や通路幅に工夫をしています。<br>
             私たちのパンが素材・香り・温度に“ぬくもり”を感じられるよう、日々パンと向き合います。
           </p>
         </div>
@@ -129,10 +147,14 @@
     <!-- 右：SNS & ロゴ -->
     <div class="footer-col footer-col--sns">
       <div class="footer-sns-icon">
-        <img src="images/info02.jpg" alt="Instagram">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagramを見る">
+          <img src="images/info02.jpg" alt="COCOLO公式Instagram">
+        </a>
       </div>
       <div class="footer-logo-mark">
-        <img src="images/logo02.png" alt="COCOLOロゴ">
+        <a href="index.html" aria-label="トップページへ戻る">
+          <img src="images/logo02.png" alt="COCOLOロゴ">
+        </a>
       </div>
     </div>
 
@@ -140,6 +162,20 @@
 
   <p class="copyright">© Bakery &amp; Cafe COCOLO.</p>
 </footer>
+
+<!-- ハンバーガーメニュー制御 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".hamburger");
+    const nav = document.querySelector(".mobile-nav");
+    if (!btn || !nav) return;
+
+    btn.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+</script>
 
 </body>
 </html>
