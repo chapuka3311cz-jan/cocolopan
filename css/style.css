@@ -1239,3 +1239,210 @@ textarea.form-control {
     padding: 6px 0 10px;
   }
 }
+
+/* ==============================
+   ハンバーガーメニュー & モバイル共通
+   （style.css の一番下に追加）
+==============================*/
+
+/* ボタン本体 */
+.hamburger {
+  display: none;              /* PCでは非表示 */
+  width: 40px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background-color: #0b4a4a;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 三本線 */
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #fff;
+  margin: 2px 0;
+}
+
+/* モバイルナビ（デフォルトは非表示） */
+.mobile-nav {
+  display: none;
+  background-color: #fff8d6;
+  border-top: 1px solid #0b4a4a;
+  border-bottom: 1px solid #0b4a4a;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #0b4a4a;
+  text-decoration: none;
+}
+
+/* 開いたとき */
+.mobile-nav.is-open {
+  display: block;
+}
+
+/* ------------------------------
+   スマホ用レイアウト調整
+------------------------------*/
+@media (max-width: 768px) {
+  /* ベースフォント少し小さめに */
+  html {
+    font-size: 70%;
+  }
+
+  /* wrapper を端まで広げる */
+  .wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 16px auto 0;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  /* ヘッダー：ロゴ＋ハンバーガーだけ横並び */
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 16px;
+    padding: 8px 16px 10px;
+  }
+
+  /* PCナビは隠す */
+  .global-nav-left,
+  .global-nav-right {
+    display: none;
+  }
+
+  /* ハンバーガー出現 */
+  .hamburger {
+    display: inline-flex;
+  }
+
+  /* キービジュアルのコピーを少し小さく＆上げる */
+  .keyvisual {
+    height: 380px;
+  }
+
+  .home .keyvisual {
+    height: 420px;
+  }
+
+  .kv-copy {
+    bottom: 40px;
+  }
+
+  .kv-copy span {
+    padding: 8px 16px;
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* キャンペーン見出し・画像 */
+  .campaign-headline {
+    font-size: 2.4rem;
+    line-height: 1.4;
+  }
+
+  .campaign-image {
+    margin-top: 16px;
+  }
+
+  /* 曜日別パン：2列グリッドにして1つを大きく */
+  .weekly-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weekly-list::after {
+    bottom: -30px;
+  }
+
+  .weekly-breads h3 {
+    font-size: 1.8rem;
+  }
+
+  .weekly-list p {
+    font-size: 1.3rem;
+  }
+
+  /* オープン記念：上下2段に */
+  .open-memorial {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 16px 16px 32px;
+  }
+
+  /* エコバッグの丸を小さく */
+  .open-bag::before {
+    width: 240px;
+    height: 240px;
+  }
+
+  .open-bag img {
+    max-width: 60%;
+  }
+
+  /* アクセス */
+  .access-inner {
+    padding: 0 16px;
+  }
+
+  /* About・Products・Contact ページの左右余白 */
+  .page-about,
+  .page-products,
+  .page-contact {
+    margin: 16px auto;
+  }
+
+  .contact-intro {
+    width: auto;
+    max-width: 100%;
+    padding: 32px 16px;
+  }
+
+  .contact-form {
+    padding: 20px 16px 40px;
+  }
+
+  /* フッター：縦積み＋真ん中寄せ */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 0;
+  }
+
+  .footer-col--nav {
+    border-left: none;
+    border-right: none;
+    border-top: 1px dotted rgba(255, 255, 255, 0.4);
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .footer-col--sns {
+    align-self: center;
+  }
+}
+
