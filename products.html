@@ -14,7 +14,7 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- 左ナビ -->
+    <!-- 左ナビ（PC用） -->
     <nav class="global-nav global-nav-left">
       <ul>
         <li><a href="index.html" class="nav-link nav-home">HOME</a></li>
@@ -36,7 +36,7 @@
       </a>
     </div>
 
-    <!-- 右ナビ -->
+    <!-- 右ナビ（PC用） -->
     <nav class="global-nav global-nav-right">
       <ul>
         <li><a href="products.html" class="nav-link is-current">商品紹介</a></li>
@@ -44,7 +44,23 @@
       </ul>
     </nav>
 
+    <!-- ハンバーガー（スマホ用） -->
+    <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+
+  <!-- スマホ用ナビ -->
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="index.html" class="nav-link nav-home">HOME</a></li>
+      <li><a href="about.html" class="nav-link">COCOLOとは</a></li>
+      <li><a href="products.html" class="nav-link is-current">商品紹介</a></li>
+      <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
@@ -58,19 +74,18 @@
     </section>
 
     <!-- 準備中メッセージ -->
-   <section class="comingsoon">
-  <h2 class="cs-title">ただいま準備中です。</h2>
+    <section class="comingsoon">
+      <h2 class="cs-title">ただいま準備中です。</h2>
 
-  <p class="cs-lead">
-    新作パンを続々焼いております。<br>
-    毎日２０種類前後のパンを焼いております。ぜひ食べに来てください！
-  </p>
+      <p class="cs-lead">
+        新作パンを続々焼いております。<br>
+        毎日２０種類前後のパンを焼いております。ぜひ食べに来てください！
+      </p>
 
-  <div class="cs-illust">
-    <img src="images/logo04.png" alt="準備中イラスト">
-  </div>
-</section>
-
+      <div class="cs-illust">
+        <img src="images/logo04.png" alt="準備中イラスト">
+      </div>
+    </section>
 
   </div>
 </main>
@@ -99,10 +114,14 @@
     <!-- 右：SNS & ロゴ -->
     <div class="footer-col footer-col--sns">
       <div class="footer-sns-icon">
-        <img src="images/info02.jpg" alt="Instagram">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagramを見る">
+          <img src="images/info02.jpg" alt="COCOLO公式Instagram">
+        </a>
       </div>
       <div class="footer-logo-mark">
-        <img src="images/logo02.png" alt="COCOLOロゴ">
+        <a href="index.html" aria-label="トップページへ戻る">
+          <img src="images/logo02.png" alt="COCOLOロゴ">
+        </a>
       </div>
     </div>
 
@@ -110,6 +129,20 @@
 
   <p class="copyright">© Bakery &amp; Cafe COCOLO.</p>
 </footer>
+
+<!-- ハンバーガーメニュー制御 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".hamburger");
+    const nav = document.querySelector(".mobile-nav");
+    if (!btn || !nav) return;
+
+    btn.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+</script>
 
 </body>
 </html>
